@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f6f7fb;
+  color: #1a1a2e;
+  overflow-x: hidden;
+}
+
+/* Dual-range price slider: two native <input type="range"> stacked on the
+   same track. Each thumb is individually styled and pointer-events are
+   scoped to the thumb only, so both sliders remain draggable independently
+   even though their tracks fully overlap. */
+.range-slider {
+  position: relative;
+  height: 32px;
+}
+
+.range-slider input[type='range'] {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  pointer-events: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+
+.range-slider input[type='range']::-webkit-slider-thumb {
+  pointer-events: auto;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: #3b5bfd;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  margin-top: -1px;
+}
+
+.range-slider input[type='range']::-moz-range-thumb {
+  pointer-events: auto;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: #3b5bfd;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.range-slider input[type='range']::-webkit-slider-runnable-track {
+  height: 4px;
+  background: transparent;
+}
+
+.range-slider input[type='range']::-moz-range-track {
+  height: 4px;
+  background: transparent;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
